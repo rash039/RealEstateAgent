@@ -1,0 +1,93 @@
+/* components/LoginForm.module.css */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background: #f4f4f4;
+}
+
+.leftPane {
+  flex: 1;
+  background: linear-gradient(45deg, #311944, #893976); /* example graphic bg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightPane {
+  flex: 1;
+  background: white;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.title {
+  font-family: Poppins, sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #2f2f2f;
+}
+
+.highlight {
+  font-size: 46px;
+  font-weight: 900;
+  color: #6358dc;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup label {
+  font-size: 12px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  color: #2f2f2f;
+  margin-bottom: 4px;
+}
+
+.inputGroup input {
+  height: 48px;
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+}
+
+.checkbox {
+  font-size: 16px;
+  color: #2f2f2f;
+}
+
+.forgotPassword {
+  font-size: 16px;
+  color: #6358dc;
+  text-decoration: none;
+}
+
+.loginButton {
+  height: 48px;
+  background: #6358dc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}

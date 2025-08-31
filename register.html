@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agent Registration</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e0f2e9;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .register-container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #4CAF50;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9em;
+    }
+
+    .footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="register-container">
+  <h2>Agent Registration</h2>
+  <form id="registerForm">
+    <label for="email">Email Address</label>
+    <input type="text" id="email" name="email" placeholder="Enter your email" required />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+    <button type="submit">Register</button>
+  </form>
+  <div class="footer">
+    Already have an account? <a href="login.html">Login here</a>
+  </div>
+</div>
+
+<script>
+  $('#registerForm').on('submit', function (e) {
+    e.preventDefault();
+
+    const email = $('#email').val();
+    const password = $('#password').val();
+
+    $.ajax({
+      url: 'http://localhost:8000/users', // adjust to your FastAPI route
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({ email, password }),
+      success: function (response) {
+        alert('Registration successful!');
+        window.location.href = 'login.html';
+      },
+      error: function (xhr) {
+        alert('Registration failed: ' + xhr.responseJSON.detail);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
