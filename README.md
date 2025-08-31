@@ -1,6 +1,15 @@
 # RealEstateAgent
 This a a real estate agent project to sell
 
+#### Frontend run
+
+run following command: Go to 
+
+`
+cd RealEstateAgent
+npm run dev
+`
+
 
 #### Api run
 
